@@ -23,7 +23,7 @@ Simple chat app with memory running on an NPU-accelerated [AnythingLLM](https://
     4. Click "Generate New API Key"
 4. Open a PowerShell instance and clone the repo
     ```
-    PS > git clone [url]
+    PS > git clone https://github.com/thatrandomfrenchdude/simple_npu_chatbot.git
     ```
 5. Create and activate your virtual environment with reqs
     ```
