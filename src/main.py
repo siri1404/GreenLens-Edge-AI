@@ -95,10 +95,7 @@ class SimpleChatApp:
         except Exception as e:
             return f"Chat request failed. Error: {e}"
 
-def main():
-    chatbot = SimpleChatApp()
-    chatbot.run()
-
 if __name__ == '__main__':
     stop_loading = False
-    main()
+    chatbot = SimpleChatApp()
+    chatbot.run()
