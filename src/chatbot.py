@@ -17,7 +17,7 @@ def loading_indicator() -> None:
         sys.stdout.flush()
     print('')
 
-class SimpleChatApp:
+class Chatbot:
     def __init__(self):
         with open("config.yaml", "r") as file:
             config = yaml.safe_load(file)
@@ -97,5 +97,5 @@ class SimpleChatApp:
 
 if __name__ == '__main__':
     stop_loading = False
-    chatbot = SimpleChatApp()
+    chatbot = Chatbot()
     chatbot.run()
