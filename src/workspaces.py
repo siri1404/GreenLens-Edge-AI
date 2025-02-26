@@ -1,5 +1,6 @@
 import requests
 import yaml
+from prettyprinter import pprint
 
 def workspaces(
     api_key = 'replace_with_api_key',
@@ -27,7 +28,7 @@ def workspaces(
     else:
         print("Authentication failed")
 
-    print(workspaces_response.json())
+    pprint(workspaces_response.json())
 
 if __name__ == "__main__":
     # load config from yaml
