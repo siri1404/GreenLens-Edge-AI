@@ -47,5 +47,5 @@ Simple chat app with memory running on an NPU-accelerated [AnythingLLM](https://
 
 ### Usage
 ```
-PS > python main.py
+PS > src/python main.py
 ```
