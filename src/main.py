@@ -4,7 +4,10 @@ import threading
 import time
 import yaml
 
-def loading_indicator():
+def loading_indicator() -> None:
+    """
+    Display a loading indicator in the console while the chat request is being processed
+    """
     while not stop_loading:
         for _ in range(10):
             sys.stdout.write('.')
@@ -27,14 +30,23 @@ class SimpleChatApp:
 
         self.message_history = []
 
-    def run(self):
+    def run(self) -> None:
+        """
+        Run the chat application loop. The user can type messages to chat with the assistant.
+        """
         while True:
             user_message = input("You: ")
             if user_message.lower() in ["exit", "quit"]:
                 break
             print("Agent: " + self.chat(user_message))
 
-    def chat(self, message: str):
+    def chat(self, message: str) -> str:
+        """
+        Send a chat request to the model server and return the response
+        
+        Inputs:
+        - message: The message to send to the chatbot
+        """
         global stop_loading
         stop_loading = False
         loading_thread = threading.Thread(target=loading_indicator)

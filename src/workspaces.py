@@ -4,7 +4,7 @@ import yaml
 def workspaces(
     api_key = 'replace_with_api_key',
     base_url = 'replace_with_base_url'
-):
+) -> None:
     """
     prints unformatted json info about the available workspaces. Used
     to identify the correct workspace slug for the chat api call
