@@ -23,29 +23,31 @@ Simple chat app with memory running on an NPU-accelerated [AnythingLLM](https://
     4. Click "Generate New API Key"
 4. Open a PowerShell instance and clone the repo
     ```
-    PS > git clone https://github.com/thatrandomfrenchdude/simple_npu_chatbot.git
+    git clone https://github.com/thatrandomfrenchdude/simple_npu_chatbot.git
     ```
 5. Create and activate your virtual environment with reqs
     ```
-    PS > python -m venv llm-venv
-    PS > ./llm-venv/Scripts/Activate.ps1
-    PS > pip install -r requirements.txt
+    cd simple_npu_chatbot
+    python -m venv llm-venv
+    ./llm-venv/Scripts/Activate.ps1
+    pip install -r requirements.txt
     ```
-6. Get your workspace slug using the workspaces tool
-    1. ```> python src/workspaces.py```
-    2. Find your workspace and its slug from the output
-7. Create your `config.yaml` file with the following variables
+6. Create your `config.yaml` file with the following variables
     ```
     api_key: "your-key-here"
     model_server_base_url: "http://localhost:3001/api/v1"
     workspace_slug: "your-slug-here"
     ```
+7. Get your workspace slug using the workspaces tool
+    1. ```python src/workspaces.py```
+    2. Find your workspace and its slug from the output
+    3. Add the slug to the `workspace_slug` variable in config.yaml
 8. Test the model server auth
     ```
-    PS > python src/auth.py
+    python src/auth.py
     ```
 
 ### Usage
 ```
-PS > src/python chatbot.py
+python src/chatbot.py
 ```
