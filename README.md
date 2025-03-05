@@ -10,6 +10,7 @@ An empty template for this app is available [here](https://github.com/thatrandom
 [1. Implementation](#implementation)<br>
 [2. Setup](#setup)<br>
 [3. Usage](#usage)<br>
+[4. Contributing](#contributing)<br>
 
 ### Implementation
 This app was built for the Snapdragon X Elite but designed to be platform agnostic. Performance may vary on other hardware.
@@ -75,3 +76,5 @@ After completing setup, run the app from the command line:
 python src/chatbot.py
 ```
 
+### Contributing
+Contributions to extend the functionality are welcome and encouraged. Please do your best to maintain the "base template" spirit of the app so that it remains a blank canvas for developers looking to build a custom local chat app.
