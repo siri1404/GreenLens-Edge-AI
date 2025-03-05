@@ -2,7 +2,9 @@
 
 A simple, NPU-accelerated chat app running locally on the [AnythingLLM](https://anythingllm.com/) model server. By using AnythingLLM as your model server, you get automatic access to the built-in RAG, conversation memory, and other LLM functionalities and optimizations for each Workspace.
 
-This application is intended to serve as an extensible base app for a custom local language model. [AnythingLLM](https://anythingllm.com/) includes many API endpoints, including Open AI compatibility, that you can access in Settings -> Tools -> Developer API -> Read the API documentation. An empty template for this app is available [here](https://github.com/thatrandomfrenchdude/simple-npu-chatbot-template) on GitHub for use during build-along workshops.
+This app is intended to serve as an extensible base app for a custom local language model. [AnythingLLM](https://anythingllm.com/) includes many API endpoints, including Open AI compatibility, that you can use to expand functionality. You can access the Swagger API docs in Settings -> Tools -> Developer API -> Read the API documentation.
+
+An empty template for this app is available [here](https://github.com/thatrandomfrenchdude/simple-npu-chatbot-template) on GitHub for use during build-along workshops.
 
 ### Table of Contents
 [1. Implementation](#implementation)<br>
