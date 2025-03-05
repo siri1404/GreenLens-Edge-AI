@@ -29,7 +29,7 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
 
 ### Setup
 1. Install and setup [AnythingLLM](https://anythingllm.com/).
-    1. When prompted to choose an LLM provider, choose Qualcomm QNN for the NPU
+    1. Choose Qualcomm QNN when prompted to choose an LLM provider to target the NPU
     2. Choose a model of your choice when prompted (this sample uses Llama 3.1 8B Chat)
 2. Create a workspace by clicking "+ New Workspace"
 3. Generate an API key
