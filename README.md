@@ -78,7 +78,7 @@ python src/chatbot.py
 ```
 
 ### Contributing
-Contributions to extend the functionality are welcome and encouraged.
+Contributions to extend the functionality are welcome and encouraged. Please review the [contribution guide](CONTRIBUTING.md) prior to submitting a pull request. 
 
 Please do your best to maintain the "base template" spirit of the app so that it remains a blank canvas for developers looking to build a custom local chat app.
 
