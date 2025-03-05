@@ -10,8 +10,9 @@ An empty template for this app is available [here](https://github.com/thatrandom
 [1. Implementation](#implementation)<br>
 [2. Setup](#setup)<br>
 [3. Usage](#usage)<br>
-[4. Contributing](#contributing)<br>
-[5. Code of Conduct](#code-of-conduct)<br>
+[4. Notes](#notes)<br>
+[5. Contributing](#contributing)<br>
+[6. Code of Conduct](#code-of-conduct)<br>
 
 ### Implementation
 This app was built for the Snapdragon X Elite but designed to be platform agnostic. Performance may vary on other hardware.
@@ -76,6 +77,10 @@ After completing setup, run the app from the command line:
 ```
 python src/chatbot.py
 ```
+
+### Notes
+***Model Not Downloaded***<br>
+Sometimes the selected model fails to download, causing an error in the generation. To resolve, check the model in Settings -> AI Providers -> LLM in AnythingLLM. You should see "uninstall" on the model card if it is installed correctly. If you see "model requires download," choose another model, click save, switch back, then save. You should see the model download in the upper right corner of the AnythingLLM window.
 
 ### Contributing
 Contributions to extend the functionality are welcome and encouraged. Please review the [contribution guide](CONTRIBUTING.md) prior to submitting a pull request. 
