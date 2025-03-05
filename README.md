@@ -45,7 +45,7 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
 5. Create and activate your virtual environment with reqs
     ```
     # 1. navigate to the cloned directory
-    cd simple_npu_chatbot
+    cd simple-npu-chatbot
 
     # 2. create the python virtual environment
     python -m venv llm-venv
