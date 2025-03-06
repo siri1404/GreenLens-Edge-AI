@@ -38,7 +38,12 @@ class Chatbot:
             user_message = input("You: ")
             if user_message.lower() in ["exit", "quit"]:
                 break
-            print("Agent: " + self.chat(user_message))
+            try:
+                print("Agent: " + self.chat(user_message))
+            except Exception as e:
+                print("Error! Check the model is correctly loaded. More details in README troubleshooting section.")
+                sys.exit(f"Error details: {e}")
+                
 
     def chat(self, message: str) -> str:
         """
