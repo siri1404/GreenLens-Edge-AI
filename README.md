@@ -1,18 +1,20 @@
 # Snapdragon NPU Edge Chat App
 
-A simple, NPU-accelerated chat app running locally on the [AnythingLLM](https://anythingllm.com/) model server. By using AnythingLLM as your model server, you get automatic access to the built-in RAG, conversation memory, and other LLM functionalities and optimizations for each Workspace.
+A simple, NPU-accelerated chat app running locally on the [AnythingLLM](https://anythingllm.com/) model server. AnythingLLM's model server provides automatic RAG, long-term memory, and other LLM optimizations with Workspace separation.
 
+### Table of Contents
+[1. Purpose](#purpose)<br>
+[2. Implementation](#implementation)<br>
+[3. Setup](#setup)<br>
+[4. Usage](#usage)<br>
+[5. Notes](#notes)<br>
+[6. Contributing](#contributing)<br>
+[7. Code of Conduct](#code-of-conduct)<br>
+
+### Purpose
 This app is intended to serve as an extensible base app for a custom local language model. [AnythingLLM](https://anythingllm.com/) includes many API endpoints, including Open AI compatibility, that you can use to expand functionality. You can access the Swagger API docs in Settings -> Tools -> Developer API -> Read the API documentation.
 
 An empty template for this app is available [here](https://github.com/thatrandomfrenchdude/simple-npu-chatbot-template) on GitHub for use during build-along workshops.
-
-### Table of Contents
-[1. Implementation](#implementation)<br>
-[2. Setup](#setup)<br>
-[3. Usage](#usage)<br>
-[4. Notes](#notes)<br>
-[5. Contributing](#contributing)<br>
-[6. Code of Conduct](#code-of-conduct)<br>
 
 ### Implementation
 This app was built for the Snapdragon X Elite but designed to be platform agnostic. Performance may vary on other hardware.
