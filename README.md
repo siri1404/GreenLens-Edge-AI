@@ -19,13 +19,13 @@ An empty template for this app is available [here](https://github.com/thatrandom
 ### Implementation
 This app was built for the Snapdragon X Elite but designed to be platform agnostic. Performance may vary on other hardware.
 
-#### Hardware
+***Hardware***
 - Machine: Dell Latitude 7455
 - Chip: Snadragon X Elite
 - OS: Windows 11
 - Memory: 32 GB
 
-#### Software
+***Software***
 - Python Version: 3.12.6
 - AnythingLLM LLM Provider: Qualcomm QNN
 - AnythingLLM Chat Model: Llama 3.1 8B Chat 8K
