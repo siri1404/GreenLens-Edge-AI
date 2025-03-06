@@ -7,7 +7,7 @@ A simple, NPU-accelerated chat app running locally on the [AnythingLLM](https://
 [2. Implementation](#implementation)<br>
 [3. Setup](#setup)<br>
 [4. Usage](#usage)<br>
-[5. Notes](#notes)<br>
+[5. Troubleshooting](#troubleshooting)<br>
 [6. Contributing](#contributing)<br>
 [7. Code of Conduct](#code-of-conduct)<br>
 
@@ -80,7 +80,10 @@ After completing setup, run the app from the command line:
 python src/chatbot.py
 ```
 
-### Notes
+### Troubleshooting
+***Qualcomm QNN Runtime Missing***<br>
+On a Snapdragon X Elite machine, Qualcomm QNN should be the default LLM Provider. If you do not see Qualcomm QNN as an option on the dropdown, you downloaded the AMD64 version of AnythingLLM. Delete the app and install the ARM64 version instead.
+
 ***Model Not Downloaded***<br>
 Sometimes the selected model fails to download, causing an error in the generation. To resolve, check the model in Settings -> AI Providers -> LLM in AnythingLLM. You should see "uninstall" on the model card if it is installed correctly. If you see "model requires download," choose another model, click save, switch back, then save. You should see the model download in the upper right corner of the AnythingLLM window.
 
