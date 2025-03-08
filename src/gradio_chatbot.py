@@ -13,8 +13,6 @@ class Chatbot:
 
         self.chat_url = f"{self.base_url}/workspace/{self.workspace_slug}/chat"
 
-        self.message_history = []
-
     def chat(self, message: str) -> str:
         """
         Send a chat request to the model server and return the response
@@ -28,20 +26,11 @@ class Chatbot:
             "Authorization": "Bearer " + self.api_key
         }
 
-        self.message_history.append({
-            "role": "user",
-            "content": message
-        })
-
-        # create a short term memory bank with the last 20 messages
-        short_term_memory = self.message_history[-20:]
-
         data = {
             "message": message,
             "mode": "chat",
             "sessionId": "example-session-id",
-            "attachments": [],
-            "history": short_term_memory
+            "attachments": []
         }
 
         chat_response = requests.post(
@@ -52,10 +41,6 @@ class Chatbot:
 
         try:
             text_response = chat_response.json()['textResponse']
-            self.message_history.append({
-                "role": "assistant",
-                "content": text_response
-            })
             return text_response
         except ValueError:
             return "Response is not valid JSON"
