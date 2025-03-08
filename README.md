@@ -75,7 +75,7 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
     3. Add the slug to the `workspace_slug` variable in config.yaml
 
 ### Usage
-You can use either a terminal or gradio chat interface to talk with the chatbot. After completing setup, run the appropriate app from the command line:
+You have the option to use a terminal or gradio chat interface the talk with the bot. After completing setup, run the app you choose from the command line:
 ```
 # terminal
 python src/terminal_chatbot.py
