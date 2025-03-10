@@ -2,15 +2,15 @@ import requests
 import yaml
 
 def auth(
-    api_key = 'replace_with_api_key',
-    base_url = 'replace_with_base_url'
+    api_key: str,
+    base_url: str,
 ) -> None:
     """
-    confirms the auth token is valid
+    Confirms the auth token is valid
 
-    inputs:
-        - api_key<string>: your api key
-        - base_url<string>: the endpoint of the AnythingLLM local server
+    Inputs:
+        - api_key (string): your api key
+        - base_url (string): the endpoint of the AnythingLLM local server
     """
     auth_url = base_url + "/auth"
 
@@ -35,7 +35,9 @@ if __name__ == "__main__":
     with open("config.yaml", "r") as file:
         config = yaml.safe_load(file)
 
+    # get the api_key and base_url from the config file
     api_key = config["api_key"]
     base_url = config["model_server_base_url"]
 
+    # call the auth function
     auth(api_key, base_url)
