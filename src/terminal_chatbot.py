@@ -3,6 +3,8 @@ import sys
 import threading
 import time
 import yaml
+import asyncio
+import httpx
 
 def loading_indicator() -> None:
     """
@@ -38,14 +40,19 @@ class Chatbot:
             user_message = input("You: ")
             if user_message.lower() in ["exit", "quit"]:
                 break
-            try:
-                print("Agent: " + self.chat(user_message))
-            except Exception as e:
-                print("Error! Check the model is correctly loaded. More details in README troubleshooting section.")
-                sys.exit(f"Error details: {e}")
+            # try:
+                # blocking chat
+                # print("Agent: " + self.blocking_chat(user_message))
+                
+            # streaming chat
+            print("Agent: ", end="")
+            self.streaming_chat(user_message)
+            # except Exception as e:
+            #     print("Error! Check the model is correctly loaded. More details in README troubleshooting section.")
+            #     sys.exit(f"Error details: {e}")
                 
 
-    def chat(self, message: str) -> str:
+    def blocking_chat(self, message: str) -> str:
         """
         Send a chat request to the model server and return the response
         
@@ -99,6 +106,60 @@ class Chatbot:
             return "Response is not valid JSON"
         except Exception as e:
             return f"Chat request failed. Error: {e}"
+        
+    def streaming_chat(self, message: str) -> None:
+        """
+        Wrapper to run the asynchronous streaming chat.
+        """
+        asyncio.run(self.streaming_chat_async(message))
+
+    async def streaming_chat_async(self, message: str) -> None:
+        """
+        Stream chat responses asynchronously from the model server and display them in real-time.
+        Buffers incomplete JSON chunks until a full chunk (terminated by newline) is collected.
+        """
+        import json
+
+        headers = {
+            "accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}"
+        }
+
+        # Update message history and create short term memory.
+        self.message_history.append({"role": "user", "content": message})
+        short_term_memory = self.message_history[-20:]
+        data = {
+            "message": message,
+            "mode": "chat",
+            "sessionId": "example-session-id",
+            "attachments": [],
+            "history": short_term_memory
+        }
+        stream_chat_url = self.chat_url.replace("chat", "stream-chat")
+
+        buffer = ""
+        try:
+            async with httpx.AsyncClient(timeout=60) as client:
+                async with client.stream("POST", stream_chat_url, headers=headers, json=data) as response:
+                    async for chunk in response.aiter_text():
+                        if chunk:
+                            buffer += chunk
+                            # Process each complete line
+                            while "\n" in buffer:
+                                line, buffer = buffer.split("\n", 1)
+                                if line.startswith("data: "):
+                                    line = line[len("data: "):]
+                                try:
+                                    parsed_chunk = json.loads(line.strip())
+                                    print(parsed_chunk)
+                                    # Uncomment to print output incrementally:
+                                    # print(parsed_chunk.get("textResponse", ""), end=" ")
+                                except json.JSONDecodeError:
+                                    # The line is not a complete JSON; wait for more data.
+                                    continue
+        except httpx.RequestError as e:
+            print(f"Streaming chat request failed. Error: {e}")
 
 if __name__ == '__main__':
     stop_loading = False

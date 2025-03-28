@@ -1,0 +1,31 @@
+[
+  {
+    "id": "uuid-123",
+    "type": "abort | textResponseChunk",
+    "textResponse": "First chunk",
+    "sources": [],
+    "close": false,
+    "error": "null | text string of the failure mode."
+  },
+  {
+    "id": "uuid-123",
+    "type": "abort | textResponseChunk",
+    "textResponse": "chunk two",
+    "sources": [],
+    "close": false,
+    "error": "null | text string of the failure mode."
+  },
+  {
+    "id": "uuid-123",
+    "type": "abort | textResponseChunk",
+    "textResponse": "final chunk of LLM output!",
+    "sources": [
+      {
+        "title": "anythingllm.txt",
+        "chunk": "This is a context chunk used in the answer of the prompt by the LLM. This will only return in the final chunk."
+      }
+    ],
+    "close": true,
+    "error": "null | text string of the failure mode."
+  }
+]
