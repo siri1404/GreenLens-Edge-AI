@@ -112,14 +112,12 @@ def main():
         clear = gr.Button("Clear")
 
         def user_message(message, history):
-            # Append the user message to the conversation.
             history.append({"role": "user", "content": message})
             return "", history
 
         def bot_response(history):
             user_msg = history[-1]["content"]
             if chatbot.stream:
-                # Append a new assistant message rather than replacing the user’s message.
                 history.append({"role": "assistant", "content": ""})
                 for updated in chatbot.streaming_chat(user_msg):
                     history[-1]["content"] = updated
