@@ -97,7 +97,6 @@ class Chatbot:
             pass
         finally:
             loop.close()
-        # Final yield
         yield response_text
 
 def main():
@@ -105,8 +104,6 @@ def main():
 
     with gr.Blocks() as app:
         gr.Markdown("# Chatbot Interface")
-
-        # When streaming, use type="messages" so incremental updates are visible.
         chatbot_widget = gr.Chatbot(type="messages")
         msg = gr.Textbox()
         clear = gr.Button("Clear")
