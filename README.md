@@ -64,6 +64,8 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
     api_key: "your-key-here"
     model_server_base_url: "http://localhost:3001/api/v1"
     workspace_slug: "your-slug-here"
+    stream: true
+    stream_timeout: 60
     ```
 7. Test the model server auth to verify the API key
     ```
