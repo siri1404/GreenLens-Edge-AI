@@ -40,7 +40,7 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
     4. Click "Generate New API Key"
 4. Open a PowerShell instance and clone the repo
     ```
-    git clone https://github.com/thatrandomfrenchdude/simple_npu_chatbot.git
+    git clone https://github.com/thatrandomfrenchdude/simple-npu-chatbot.git
     ```
 5. Create and activate your virtual environment with reqs
     ```
