@@ -19,7 +19,7 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
 
 ***Hardware***
 - Machine: Dell Latitude 7455
-- Chip: Snadragon X Elite
+- Chip: Snapdragon X Elite
 - OS: Windows 11
 - Memory: 32 GB
 
