@@ -25,12 +25,12 @@ This app was built for the Snapdragon X Elite but designed to be platform agnost
 
 ***Software***
 - Python Version: 3.12.6
-- AnythingLLM LLM Provider: Qualcomm QNN
+- AnythingLLM LLM Provider: AnythingLLM NPU (For older version, this may show Qualcomm QNN)
 - AnythingLLM Chat Model: Llama 3.1 8B Chat 8K
 
 ### Setup
 1. Install and setup [AnythingLLM](https://anythingllm.com/).
-    1. Choose Qualcomm QNN when prompted to choose an LLM provider to target the NPU
+    1. Choose AnythingLLM NPU when prompted to choose an LLM provider to target the NPU
     2. Choose a model of your choice when prompted. This sample uses Llama 3.1 8B Chat with 8K context
 2. Create a workspace by clicking "+ New Workspace"
 3. Generate an API key
@@ -85,8 +85,8 @@ python src/gradio_chatbot.py
 ```
 
 ### Troubleshooting
-***Qualcomm QNN Runtime Missing***<br>
-On a Snapdragon X Elite machine, Qualcomm QNN should be the default LLM Provider. If you do not see Qualcomm QNN as an option on the dropdown, you downloaded the AMD64 version of AnythingLLM. Delete the app and install the ARM64 version instead.
+***AnythingLLM NPU Runtime Missing***<br>
+On a Snapdragon X Elite machine, AnythingLLM NPU should be the default LLM Provider. If you do not see it as an option in the dropdown, you downloaded the AMD64 version of AnythingLLM. Delete the app and install the ARM64 version instead.
 
 ***Model Not Downloaded***<br>
 Sometimes the selected model fails to download, causing an error in the generation. To resolve, check the model in Settings -> AI Providers -> LLM in AnythingLLM. You should see "uninstall" on the model card if it is installed correctly. If you see "model requires download," choose another model, click save, switch back, then save. You should see the model download in the upper right corner of the AnythingLLM window.
