@@ -2,6 +2,8 @@
 
 A simple, NPU-accelerated chat app running locally on the [AnythingLLM](https://anythingllm.com/) model server. AnythingLLM's model server provides automatic RAG, long-term memory, and other LLM optimizations with Workspace separation.
 
+To write the code from scratch with me, check out this [build along video](https://www.youtube.com/watch?v=Cb-TvjTV4Eg) on Youtube!
+
 ### Table of Contents
 [1. Purpose](#purpose)<br>
 [2. Implementation](#implementation)<br>
